@@ -16,7 +16,7 @@ const displayErrorMes = Yup.object().shape({
   description: Yup.string().required("Le champ est requis"),
 })
 
-const entry = () => {
+const Entry = () => {
   const { addDatas } = useContext(AppContext)
 
   const handleFormSubmit = useCallback(
@@ -79,4 +79,4 @@ const entry = () => {
   )
 }
 
-export default entry
+export default Entry

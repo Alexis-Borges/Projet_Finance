@@ -4,6 +4,7 @@ import { useContext } from "react"
 
 const ListEntrys = () => {
   const { datas } = useContext(AppContext)
+  
   return (
     <>
       {datas.map(({ amount, description }, id) => (

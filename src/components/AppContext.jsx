@@ -17,6 +17,7 @@ export const AppContextProvider = (props) => {
       if (current.amount > 0) {
         return Number(total) + Number(current.amount)
       }
+
       return Number(total) + 0
     }, 0)
 
@@ -28,6 +29,7 @@ export const AppContextProvider = (props) => {
       if (current.amount < 0) {
         return Number(total) + Number(current.amount)
       }
+      
       return Number(total) + 0
     }, 0)
 
