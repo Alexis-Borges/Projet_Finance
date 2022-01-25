@@ -29,11 +29,11 @@ const Home = () => {
           <ListEntrys />
           <tr>
             <td className="border-2 w-1/2 p-2 font-bold text-2xl color-green-200 border-sky-200">
-              <p>Recettes totaux</p>
+              <p>Recettes totales</p>
               <Income />
             </td>
             <td className="border-2 w-1/2 p-2 font-bold text-2xl border-sky-200">
-              <p> Dépenses totaux </p>
+              <p> Dépenses totales </p>
               <OutGone />
             </td>
           </tr>
