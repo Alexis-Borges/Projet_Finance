@@ -2,7 +2,9 @@ import { Formik, Field, Form } from "formik"
 import * as Yup from "yup"
 import Header from "../src/components/Header"
 import AppContext from "../src/components/AppContext"
-import { useCallback, useContext } from "react"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import React, { useCallback, useContext } from "react"
 
 const displayErrorMes = Yup.object().shape({
   amount: Yup.number()
@@ -19,6 +21,12 @@ const displayErrorMes = Yup.object().shape({
 const Entry = () => {
   const { addDatas } = useContext(AppContext)
 
+  const showToastMessage = () => {
+    toast.success("Entré ajoutée !", {
+      position: toast.POSITION.TOP_RIGHT,
+    })
+  }
+
   const handleFormSubmit = useCallback(
     (values, { resetForm }) => {
       addDatas({
@@ -26,6 +34,7 @@ const Entry = () => {
         description: values.description,
       })
       resetForm()
+      showToastMessage()
 
       return true
     },
@@ -70,6 +79,7 @@ const Entry = () => {
               className="w-full p-2 text-white bg-green-400 hover:bg-green-500 mt-11 rounded-xl"
               type="submit"
             >
+              <ToastContainer />
               Ajouter La Section
             </button>
           </Form>
